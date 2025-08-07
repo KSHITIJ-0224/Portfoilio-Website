@@ -1,0 +1,304 @@
+html {
+    scroll-behavior: smooth;
+}
+/* Animated Gradient Background */
+body {
+    background: linear-gradient(-45deg, #3f51b5, #24c6dc, #5433ff, #e941e6);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease-in-out infinite;
+    color: #f1effa;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 60%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 40%; }
+    75% { background-position: 30% 0%; }
+    100% { background-position: 0% 60%; }
+}
+/* Interactive Dots/Particles Overlay */
+.bg-particles {
+    pointer-events: none;
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.bg-particles::before, .bg-particles::after {
+    content: '';
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    top: -50vh; left: -50vw;
+    background: radial-gradient(circle at 20% 40%, #26effb88 2px, transparent 10%),
+                radial-gradient(circle at 80% 70%, #e941e699 1.8px, transparent 8%),
+                radial-gradient(circle at 50% 90%, #a15de166 3px, transparent 10%),
+                radial-gradient(circle at 66% 33%, #fff3 1.6px, transparent 8%);
+    opacity: 0.56;
+    animation: floatDots 36s linear infinite;
+    filter: blur(0.2px);
+}
+.bg-particles::after {
+    animation-delay: 18s;
+    opacity: 0.44;
+}
+@keyframes floatDots {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+section, .container, .projectsSection, .secondSection {
+    background: rgba(36,36,56,0.82);
+    border-radius: 20px;
+    backdrop-filter: blur(6px) saturate(1.5);
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px 0 #2be6f633, 0 2px 12px 0 #a15de13c;
+    position: relative;
+    z-index: 2;
+}
+
+
+.left {
+    font-size: 1.5rem;
+}
+.firstSection {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.leftSection {
+    font-size: 2rem;
+}
+.leftSection .btn {
+    padding: 12px 30px;
+    background-color: #1e2167;
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s, box-shadow .2s, color .2s;
+    box-shadow: 0 4px 16px #17152a3a;
+}
+.leftSection .btn:hover {
+    background-color: #23e3c9;
+    color: #1e2167;
+    box-shadow: 0 4px 28px #56fff192;
+    border-color: #23e3c9;
+}
+.purple {
+    color: #a15de1;
+}
+.text-gray {
+    color: #bbb;
+}
+#element {
+    color: #a15de1;
+}
+.secondSection {
+    margin-bottom: 40px;
+}
+.secondSection h1,
+.section-title-glow {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #f1effa;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 5px 35px #7a27f860, 0 2px 8px #1566ce14;
+}
+.section-subtitle, .text-hero {
+    color: #23e3c9;
+    font-weight: 600;
+    font-size: 1.18rem;
+    letter-spacing: 1.2px;
+    background: linear-gradient(90deg, #e2aeff, #56fff1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+hr {
+    border: none;
+    height: 2px;
+    margin: 60px 0;
+    background: linear-gradient(90deg, #a15de1 0%, #26effb 100%);
+    filter: blur(0.4px);
+    box-shadow: 0 0 12px #791b9c33;
+}
+.projectsSection{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.projectCard {
+    background-color: rgba(36,36,56, .95);
+    color: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 24px rgba(95,255,240,0.061), 0 4px 10px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1.4px solid #36f3ff40;
+    transition: box-shadow .2s, border .2s, transform .2s;
+}
+.projectCard:hover {
+    box-shadow: 0 8px 32px #63fcf763, 0 4px 20px #ce47f941;
+    border: 1.8px solid #a15de1;
+    transform: translateY(-2px) scale(1.03);
+}
+.projectCard img {
+    width: 100%;
+    border-radius: 10px;
+}
+.projectLink {
+    text-decoration: none;
+    color: #5eeffe;
+    font-weight: bold;
+    transition: color .2s;
+}
+.projectLink:hover {
+    color: #f362c5;
+    text-decoration: underline;
+    text-shadow: 0 0 12px #f362c577;
+}
+.contactSection h1 {
+    margin-bottom: 20px;
+    color: #5eeffe;
+    font-weight: 700;
+}
+input, textarea, .form-control {
+    background: #201445;
+    color: #fff;
+    border: 1.5px solid #5eeffe !important;
+}
+input:focus, textarea:focus, .form-control:focus {
+    border-color: #f362c5 !important;
+    background: #311e68;
+    color: #fff;
+    box-shadow: 0 0 0 0.12rem #5eeffe70;
+}
+
+footer {
+    background: linear-gradient(90deg, #261826 10%, #1a1731 100%);
+}
+.footer-rights {
+    text-align: center;
+    color: #5eeffe;
+    padding: 12px 0;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+}
+
+/* Enhanced Work Experience Card Styles */
+.experience-card-glass {
+    background: rgba(40, 20, 60, 0.75);
+    border-radius: 22px;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 28px 8px rgba(62,0,113,0.22),
+                0 2px 8px rgba(36,235,255,0.14);
+    backdrop-filter: blur(8px) brightness(1.05);
+    transition: box-shadow 0.3s, border 0.3s, transform 0.2s;
+    border-image: linear-gradient(135deg,#c62ff2,#46f7fd) 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 390px;
+}
+.experience-card-glass:hover {
+    box-shadow: 0 16px 48px 8px #39ffff63, 0 10px 40px 16px #ce47f997;
+    border: 2.5px solid #46f7fd;
+    transform: scale(1.035) translateY(-4px);
+    z-index: 2;
+}
+.experience-icon-glass {
+    background: linear-gradient(135deg, #51c6f2 40%,#e96cff 100%);
+    border-radius: 50%;
+    width: 70px; height: 70px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+    box-shadow: 0 2.5px 22px #c14ff866;
+    border: 2.5px solid #f9e1ff40;
+    transition: box-shadow .2s;
+}
+.experience-card-glass:hover .experience-icon-glass {
+    box-shadow: 0 3.5px 36px #63fff866, 0 3.5px 36px #f362c5b8;
+}
+.experience-icon-glass img {
+    width: 36px; height: 36px;
+    filter: drop-shadow(0 1.5px 6px #fff6);
+}
+.experience-role {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.22rem;
+    letter-spacing: .7px;
+    margin-bottom: 5px;
+}
+.company {
+    font-weight: 600;
+    color: #56fff1;
+    letter-spacing: 1px;
+}
+.exp-year {
+    font-size: 1em;
+    color: #adbce4;
+}
+.experience-desc {
+    font-size: 1.01em;
+    color: #f1effa;
+    margin-top: 13px;
+    line-height: 1.45;
+}
+.experience-card-glass::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10%; right: 10%;
+    bottom: 0;
+    height: 5px;
+    border-radius: 2px 2px 10px 10px;
+    background: linear-gradient(90deg,#b04efa,#56fff1 80%);
+    opacity: 0.45;
+    transition: opacity 0.2s;
+}
+.experience-card-glass:hover::after {
+    opacity: 1;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991.98px) {
+    .experience-card-glass {
+        margin-bottom: 18px;
+        min-height: 320px;
+    }
+}
+@media (max-width: 767.98px) {
+    .leftSection {
+        font-size: 1.3rem;
+    }
+    .firstSection {
+        margin-top: 20px;
+        margin-bottom: 24px;
+    }
+    .projectCard {
+        padding: 15px;
+    }
+    .secondSection h1,
+    .section-title-glow {
+        font-size: 1.1rem;
+    }
+    .experience-card-glass {
+        min-height: 280px;
+        padding: 16px 10px;
+    }
+    .experience-icon-glass { width: 54px; height: 54px; }
+    .experience-icon-glass img { width: 26px; height: 26px;}
+}
